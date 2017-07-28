@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Spender</string>
+    <string name="add_amount_spent">Add Amount Spent</string>
+    <string name="calendar">Calendar</string>
+    <string name="submit">Submit</string>
+    <string name="set_monthly_limit">Set Monthly Limit</string>
+    <string name="view_todays_amount">View Todays Amount</string>
+    <string name="amount">Amount:</string>
+    <string name="detail">Detail:</string>
+    <string name="others">Others:</string>
+    <string name="_0">0</string>
+    <string-array name="Details">
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <item>Other</item>
+
+    </string-array>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
