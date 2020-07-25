@@ -1,11 +1,54 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+    <style name="LightTheme" parent="AppTheme">
+        <item name="textColor">#7b7c7c</item>
+        <item name="textColorMain">#4DB6AC</item>
+        <item name="metaTextColor">#606060</item>
+        <item name="bgColor">#00B0FE</item>
+        <item name="cardColor">#ffffff</item>
+        <item name="settingColor">#00b0fe</item>
+        <item name="monthColor">#4DB6AC</item>
+        <item name="submitButton">#50e3c2</item>
+        <item name="cancelButton">#fc538c</item>
+        <item name="spinner_bg">#69e2ff</item>
+        <item name="spinner_text">#ffffff</item>
+    </style>
+    <style name="DarkTheme" parent="AppTheme">
+        <item name="textColor">#c0ffffff</item>
+        <item name="textColorMain">#c0ffffff</item>
+        <item name="metaTextColor">#aeaeae</item>
+        <item name="bgColor">#091332</item>
+        <item name="cardColor">#011655</item>
+        <item name="settingColor">#FF292929</item>
+        <item name="monthColor">#842bd7</item>
+        <item name="submitButton">#2fb6f8</item>
+        <item name="cancelButton">#ff80ab</item>
+        <item name="spinner_bg">#3b3c82</item>
+        <item name="spinner_text">#c0ffffff</item>
+    </style>
+    <style name="CalenderViewCustom" parent="Theme.AppCompat">
+        <item name="colorAccent">#fe0026</item>
+        <item name="colorPrimary">#00b0fe</item>
+        <item name="android:textColorPrimary">#a95aec</item>
+        <item name="android:textColorPrimaryInverse">#ffffff</item>
+        <item name="android:colorControlActivated">#fe0026</item>
+    </style>
+
+    <style name="CalenderViewDateCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">#c0ffffff</item>
+        <item name="android:weekNumberColor">#fedc00</item>
+    </style>
+
+    <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">#009dfe</item>
     </style>
 
 </resources>

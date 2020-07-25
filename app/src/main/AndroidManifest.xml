@@ -2,14 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.user.spender"
     >
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme"
+        android:largeHeap="true">
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,6 +23,9 @@
         <activity android:name=".TheCalendar" android:screenOrientation="portrait"/>
         <activity android:name=".TodaysAmt" android:screenOrientation="portrait"/>
         <activity android:name=".DaysDetail" android:screenOrientation="portrait"/>
+        <activity android:name=".Settings" android:screenOrientation="portrait"/>
+        <activity android:name=".MonthlyAmt" android:screenOrientation="portrait"/>
+        <receiver android:name=".Notification_receiver" />
     </application>
 
 </manifest>

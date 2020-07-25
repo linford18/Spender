@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -39,6 +40,11 @@ public class AddAmount extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.DarkTheme);
+        } else {
+            setTheme(R.style.LightTheme);
+        }
         setContentView(R.layout.amount_spent);
         Intent intent=getIntent();
         year=intent.getIntExtra("Year",-1);
@@ -47,8 +53,8 @@ public class AddAmount extends Activity {
         date = day*1000000+month*1000+year;     //to create a unique date
         Log.d("Add amount:month",String.valueOf(month));
         spinner =(Spinner) findViewById(R.id.spinner);
-        adapter= ArrayAdapter.createFromResource(  this ,R.array.Details,   android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        adapter= ArrayAdapter.createFromResource(  this ,R.array.Details,   R.layout.spinner_list);
+        adapter.setDropDownViewResource(R.layout.spinner_list_bg);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -75,12 +81,13 @@ public class AddAmount extends Activity {
         }
 
 
-
-
-
         submit.setOnClickListener(new  View.OnClickListener(){
                                       @Override
                                       public void onClick(View v) {
+                                         breakfast=0;
+                                          dinner=0;
+                                          lunch=0;
+                                          others=0;
                                           if (detail.equals("Lunch")){
                                               lunch=Integer.parseInt(mEdit.getText().toString());
                                               num=2;

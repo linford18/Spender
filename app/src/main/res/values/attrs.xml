@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="bgColor" format="color"/>
+    <attr name="textColor" format="color"/>
+    <attr name="textColorMain" format="color"/>
+    <attr name="metaTextColor" format="color"/>
+    <attr name="cardColor" format="color"/>
+    <attr name="settingColor" format="color"/>
+    <attr name="monthColor" format="color"/>
+    <attr name="submitButton" format="color"/>
+    <attr name="cancelButton" format="color"/>
+    <attr name="spinner_bg" format="color"/>
+    <attr name="spinner_text" format="color"/>
+</resources>

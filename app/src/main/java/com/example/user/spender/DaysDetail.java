@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +22,7 @@ public class DaysDetail extends Activity implements View.OnClickListener {
     TextView tDinner;
     TextView tOthers;
     TextView tDate;
+    Button tvChangeTheme;
     Amount days_amt;
     Button edit;
     Button delete;
@@ -31,7 +33,13 @@ public class DaysDetail extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.DarkTheme);
+        } else {
+            setTheme(R.style.LightTheme);
+        }
         setContentView(R.layout.days_detail);
+
         Intent intent=getIntent();
         year=intent.getIntExtra("Year",-1);
         month=intent.getIntExtra("Month",-1);
@@ -79,7 +87,7 @@ public class DaysDetail extends Activity implements View.OnClickListener {
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View v)  {
         switch (v.getId()){
             case R.id.edit_button:Intent intent = new Intent(getApplicationContext(),AddAmount.class);
                 intent.putExtra("Day",day);
@@ -110,6 +118,8 @@ public class DaysDetail extends Activity implements View.OnClickListener {
                 alert.show();
 
                 break;
+
+
         }
     }
     @Override

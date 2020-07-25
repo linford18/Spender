@@ -64,6 +64,7 @@ public class DBHandler extends SQLiteOpenHelper {
         //2nd argument is String containing nullColumnHack
         db.close(); // Closing database connection
     }
+
     // code to get the single day
     Amount getAmountDet(int date) {
         SQLiteDatabase db = this.getReadableDatabase();
