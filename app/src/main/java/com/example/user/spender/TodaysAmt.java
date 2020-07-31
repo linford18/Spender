@@ -77,7 +77,7 @@ public class TodaysAmt extends Activity implements OnClickListener {
 
 
         switch (v.getId()) {
-            case R.id.update:Intent intent = new Intent(this, AddAmount.class);
+            case R.id.update:Intent intent = new Intent(v.getContext(), AddAmount.class);
                 intent.putExtra("Day",day);
                 intent.putExtra("Month",(month));
                 intent.putExtra("Year",year);
@@ -116,23 +116,40 @@ public class TodaysAmt extends Activity implements OnClickListener {
 
 
     @Override
-            protected void onResume () {
-                super.onResume();
-                try {
-                    tdays_amt = db.getAmountDet(date);
+    protected void onResume () {
+        super.onResume();
+        try {
+            tdays_amt = db.getAmountDet(date);
 
-                }catch (RuntimeException r) {
-                    Toast.makeText(this, "Today's details were not added.", Toast.LENGTH_SHORT).show();
-                    detailsadded = false;
-                }
-            if (detailsadded == true) {
+        }catch (RuntimeException r) {
+            Toast.makeText(this, "Today's details were not added.", Toast.LENGTH_SHORT).show();
+            detailsadded = false;
+        }
+        if (detailsadded == true) {
 
             tBreakfast.setText(String.valueOf(tdays_amt.getBreakfast()));
             tLunch.setText(String.valueOf(tdays_amt.getLunch()));
             tDinner.setText(String.valueOf(tdays_amt.getDinner()));
             tOthers.setText(String.valueOf(tdays_amt.getOthers()));
             tTotal.setText(String.valueOf(tdays_amt.getLunch() + tdays_amt.getOthers() + tdays_amt.getDinner() + tdays_amt.getBreakfast()));
-            }
-            }
         }
+    }
 
+    // Path executed when details present
+    public void update(View view) {
+        String ButtonTxt;
+        ButtonTxt=((Button) view).getText().toString();
+        if (ButtonTxt.equals("Update")){
+            Intent intent = new Intent(this,AddAmount.class);
+            intent.putExtra("Day",day);
+            intent.putExtra("Month",(month));
+            intent.putExtra("Year",year);
+            startActivity(intent);
+        }
+    }
+
+    // Path executed when details present
+    public void delete(View view) {
+        Toast.makeText(getApplicationContext(), "No Details To Delete", Toast.LENGTH_SHORT).show();
+    }
+}

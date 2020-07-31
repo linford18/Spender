@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
             root.setBackgroundResource(R.drawable.bag_cal);
         }
+
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         //new
@@ -101,6 +102,18 @@ public class MainActivity extends AppCompatActivity {
                             intent3.putExtra("Month",(month));
                             intent3.putExtra("Year",year);
                             startActivity(intent3);
+                            break;
+                        case 4:Intent intent4 = new Intent(view.getContext(),Statistics.class);
+                            intent4.putExtra("Day",day);
+                            intent4.putExtra("Month",(month));
+                            intent4.putExtra("Year",year);
+                            startActivity(intent4);
+                            break;
+                        case 5:Intent intent5 = new Intent(view.getContext(),SyncUp.class);
+                            intent5.putExtra("Day",day);
+                            intent5.putExtra("Month",(month));
+                            intent5.putExtra("Year",year);
+                            startActivity(intent5);
                             break;
                     }
                 }
@@ -185,5 +198,15 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
+    public void syncup(View view) {
+
+            Intent intent = new Intent(this,SyncUp.class);
+            intent.putExtra("Day",day);
+            intent.putExtra("Month",(month));
+            intent.putExtra("Year",year);
+            startActivity(intent);
+        }
+
 
 }

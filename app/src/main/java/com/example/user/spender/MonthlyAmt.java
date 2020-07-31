@@ -36,6 +36,7 @@ public class MonthlyAmt extends Activity {
         super.onCreate(savedInstanceState);
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.DarkTheme);
+
         } else {
             setTheme(R.style.LightTheme);
         }

@@ -6,43 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/bag_cal"
     android:id="@+id/stats">
-    <!--#009FFD#2A2A72-->
-    <!--#AD1DEB#6E72FC-->
-    <!--#E975A8#726CF8-->
-    <!--#B3F6D8#52A7C1-->
-    <!--#6D17CB#2876F9-->
-    <!--#39E5B6#70B2D9-->
-    <!--#C373F2#F977CE-->
-    <!--#D3D3D3#1DD1A1-->
-    <!--#A1BAFE #8D5185-->
-    <!--#E186B4#BDD8FE-->
-    <!--#20DED3#F6FBA2-->
-    <!--#380036#0CBABA-->
-    <!--#FC575E#F7B42C-->
-    <!--#37D5D6#36096D-->
-    <!--#647DEE#7F53AC-->
-    <!--#09C6F9#045DE9-->
-    <!--#FFDD00#FBB034-->
-    <!--#FE5F75#FC9842-->
-    <!--#F67062#FC5296-->
-    <!--Light-->
-    <!--#7EE8FA#EEC0C6-->
-    <!--#D387AB#E899DC-->
-    <!--#7EE8FA#EEC0C6-->
-    <!--#E58C8A#EEC0C6-->
-    <!--#74F2CE#7CFFCB-->
-    <!--#FF928B#FFAC81-->
-    <!--#FB8085#F9C1B1-->
-    <!--#F1A7F1#FAD0C4-->
-    <!--#A88BEB#F8CEEC-->
-    <!--#FF8489#D5ADC8-->
-    <!--#F9D976#F39F86-->
-    <!--#77EED8#9EABE4-->
-    <!--#DAD2F3#FBA8A4-->
-    <!--#AFF1DA#F9EA8F-->
-    <!--#9795EF#F9C5D1-->
-    <!--#7DDFF8#B1ADE2-->
-    <!--#B9D1EB#F876DE-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -81,136 +44,6 @@
 
 
         </RelativeLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="25dp">
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/horizontalScrollView">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/Hcard1"
-                        android:layout_width="250dp"
-                        android:layout_height="wrap_content"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="12dp"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="6dp">
-                        <!--app:cardBackgroundColor="@drawable/card_gradient">-->
-                        <!--app:cardBackgroundColor="?attr/cardColor">-->
-                        <!--android:onClick="stats1"-->
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:padding="16dp"
-                            android:background="@drawable/card_gradient">
-
-                            <ImageView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                android:src="@drawable/statistics_icon" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="Bar Chart"
-                                android:textColor="?attr/textColorMain"
-                                android:textSize="18dp" />
-
-                        </LinearLayout>
-
-
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="250dp"
-                        android:layout_height="wrap_content"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="12dp"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="6dp">
-                        <!--app:cardBackgroundColor="?attr/cardColor">-->
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:padding="16dp"
-                            android:background="@drawable/card_gradient2">
-
-                            <ImageView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                android:src="@drawable/statistics_icon" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="Pie chart"
-                                android:textColor="?attr/textColorMain"
-                                android:textSize="18dp" />
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="250dp"
-                        android:layout_height="wrap_content"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="12dp"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="6dp">
-                        <!--app:cardBackgroundColor="?attr/cardColor">-->
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:padding="16dp"
-                            android:background="@drawable/card_gradient3">
-
-                            <ImageView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                android:src="@drawable/statistics_icon" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="Radar Chart"
-                                android:textColor="?attr/textColorMain"
-                                android:textSize="18dp" />
-
-                        </LinearLayout>
-
-
-                    </android.support.v7.widget.CardView>
-                </LinearLayout>
-
-            </HorizontalScrollView>
-        </LinearLayout>
 
         <GridLayout
             android:layout_width="match_parent"
@@ -221,7 +54,6 @@
             android:rowCount="3"
             android:id="@+id/statsGrid"
             >
-
 
 
             <android.support.v7.widget.CardView

@@ -25,6 +25,16 @@
         <activity android:name=".DaysDetail" android:screenOrientation="portrait"/>
         <activity android:name=".Settings" android:screenOrientation="portrait"/>
         <activity android:name=".MonthlyAmt" android:screenOrientation="portrait"/>
+        <activity android:name=".Statistics" android:screenOrientation="portrait"/>
+        <activity android:name=".GraphFirst" android:screenOrientation="portrait"/>
+        <activity android:name=".BarChartActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".PieChartActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".SyncUp" android:screenOrientation="portrait"/>
+        <activity android:name=".RadarChartActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".CombinedChartActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".StackedBarActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".PreviewColumnChartActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".LineColumnDependencyActivity" android:screenOrientation="portrait"/>
         <receiver android:name=".Notification_receiver" />
     </application>
 
