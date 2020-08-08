@@ -3,6 +3,7 @@ package com.example.user.spender;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,12 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
 
 /**
  * Created by user on 31-12-2017.
@@ -23,12 +30,13 @@ public class MonthlyAmt extends Activity {
     TextView tOthers;
     TextView tDate;
     Amount days_amt;
-    ImageButton next,previous;
+    Button next,previous;
     DBHandler db = new DBHandler(this);
     int day,month,year,date,today;
     int total=0,bfast=0,lunch=0,dinner=0,other=0;
     String monthString;
     boolean daysdetails = true;
+
 
 
     @Override
@@ -48,10 +56,11 @@ public class MonthlyAmt extends Activity {
         month=intent.getIntExtra("Month",-1);
         today=intent.getIntExtra("Day",-1);
         day=1;
-        next=(ImageButton)findViewById(R.id.nextButton);
-        previous=(ImageButton)findViewById(R.id.previousButton);
+        next=(Button)findViewById(R.id.nextButton);
+        previous=(Button)findViewById(R.id.previousButton);
 
         displaydetails(today,month,year);
+        exportDB();
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +86,7 @@ public class MonthlyAmt extends Activity {
                 displaydetails(today, month, year);
             }
         });
+
 
 
     }
@@ -164,6 +174,29 @@ public class MonthlyAmt extends Activity {
             // Writing Details to log
             Log.d("Name: ", log);
         }*/
+    }
+    private void exportDB(){
+        File sd = Environment.getExternalStorageDirectory();
+        File data = Environment.getDataDirectory();
+        FileChannel source=null;
+        FileChannel destination=null;
+        String SAMPLE_DB_NAME = "stats";
+        String currentDBPath = "/data/"+ "com.example.user.spender" +"/databases/"+SAMPLE_DB_NAME;
+        String backupDBPath = SAMPLE_DB_NAME;
+        File currentDB = new File(data, currentDBPath);
+        Log.d("",sd.getPath());
+
+        File backupDB = new File(sd, backupDBPath);
+        try {
+            source = new FileInputStream(currentDB).getChannel();
+            destination = new FileOutputStream(backupDB).getChannel();
+            destination.transferFrom(source, 0, source.size());
+            source.close();
+            destination.close();
+            Toast.makeText(this, "DB Exported!", Toast.LENGTH_LONG).show();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

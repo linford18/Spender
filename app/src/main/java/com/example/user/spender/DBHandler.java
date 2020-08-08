@@ -85,10 +85,11 @@ public class DBHandler extends SQLiteOpenHelper {
     public List<Amount> getAllAmounts() {
         List<Amount> AmountList = new ArrayList<Amount>();
         // Select All Query
-        String selectQuery = "SELECT  * FROM " + TABLE_AMOUNT_DETAIL;
+        String selectQuery = "SELECT  * FROM " + TABLE_AMOUNT_DETAIL +" ORDER BY "+ KEY_DATE;
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
+
 
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
@@ -104,7 +105,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 AmountList.add(amount);
             } while (cursor.moveToNext());
         }
-
+        db.close(); // Closing database connection
         // return amount list
         return AmountList;
     }

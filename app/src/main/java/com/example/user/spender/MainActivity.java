@@ -1,6 +1,7 @@
 package com.example.user.spender;
 
 import android.content.Intent;
+import android.database.CursorIndexOutOfBoundsException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
@@ -28,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
     GridLayout gridLayout;
     ScrollView root;
 
+    SettingsDBHandler setting_db = new SettingsDBHandler(this);
+    SettingClass theme;
+    int theme_value;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +44,30 @@ public class MainActivity extends AppCompatActivity {
         }
         setContentView(R.layout.row);
         root=(ScrollView) findViewById(R.id.MainBgScroll);
+
+
+//        try{
+//            theme = setting_db.getSettingDet("Theme");
+//            theme_value=theme.getSettingValue();
+////            db.addAmount(new Amount(date,breakfast,lunch,dinner,others));
+//            Toast.makeText(this,String.valueOf(theme_value)+ " got from db", Toast.LENGTH_LONG).show();
+//        }
+//        catch (CursorIndexOutOfBoundsException s){
+////            db.updateAmount(new Amount(date,breakfast,lunch,dinner,others));
+//            setting_db.addSettingDet(new SettingClass("Theme",0));
+//            theme_value = 0;
+//            Toast.makeText(this, "Setting first time value to 0", Toast.LENGTH_LONG).show();
+//        }
+//        if (theme_value==0){
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//        }
+//        else {
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//        }
+
+        Util u = new Util();
+        u.set_theme(this);
+
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
 
             root.setBackgroundResource(R.drawable.bag_cal_dark);

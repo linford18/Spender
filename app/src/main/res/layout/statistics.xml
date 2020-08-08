@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bag_cal"
+    android:scrollbars="none"
     android:id="@+id/stats">
     <!--#009FFD#2A2A72-->
     <!--#AD1DEB#6E72FC-->
@@ -14,34 +15,61 @@
     <!--#39E5B6#70B2D9-->
     <!--#C373F2#F977CE-->
     <!--#D3D3D3#1DD1A1-->
+
     <!--#A1BAFE #8D5185-->
+
     <!--#E186B4#BDD8FE-->
+
     <!--#20DED3#F6FBA2-->
+
     <!--#380036#0CBABA-->
+
     <!--#FC575E#F7B42C-->
+
     <!--#37D5D6#36096D-->
+
     <!--#647DEE#7F53AC-->
+
     <!--#09C6F9#045DE9-->
+
     <!--#FFDD00#FBB034-->
+
     <!--#FE5F75#FC9842-->
+
     <!--#F67062#FC5296-->
+
+
     <!--Light-->
     <!--#7EE8FA#EEC0C6-->
+
     <!--#D387AB#E899DC-->
-    <!--#7EE8FA#EEC0C6-->
+
     <!--#E58C8A#EEC0C6-->
+
     <!--#74F2CE#7CFFCB-->
+
     <!--#FF928B#FFAC81-->
+
     <!--#FB8085#F9C1B1-->
+
     <!--#F1A7F1#FAD0C4-->
+
     <!--#A88BEB#F8CEEC-->
+
     <!--#FF8489#D5ADC8-->
+
     <!--#F9D976#F39F86-->
+
     <!--#77EED8#9EABE4-->
+
     <!--#DAD2F3#FBA8A4-->
+
     <!--#AFF1DA#F9EA8F-->
+
     <!--#9795EF#F9C5D1-->
+
     <!--#7DDFF8#B1ADE2-->
+
     <!--#B9D1EB#F876DE-->
 
     <LinearLayout
@@ -88,7 +116,9 @@
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/horizontalScrollView">
+                android:id="@+id/horizontalScrollView"
+
+                android:scrollbars="none">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -116,7 +146,8 @@
                             android:gravity="center"
                             android:orientation="vertical"
                             android:padding="16dp"
-                            android:background="@drawable/card_gradient">
+                            android:background="@drawable/card_gradient"
+                            android:id="@+id/Hcardlinear1">
 
                             <ImageView
                                 android:layout_width="80dp"
@@ -152,7 +183,8 @@
                             android:gravity="center"
                             android:orientation="vertical"
                             android:padding="16dp"
-                            android:background="@drawable/card_gradient2">
+                            android:background="@drawable/card_gradient2"
+                            android:id="@+id/Hcardlinear2">
 
                             <ImageView
                                 android:layout_width="80dp"
@@ -188,7 +220,8 @@
                             android:gravity="center"
                             android:orientation="vertical"
                             android:padding="16dp"
-                            android:background="@drawable/card_gradient3">
+                            android:background="@drawable/card_gradient3"
+                            android:id="@+id/Hcardlinear3">
 
                             <ImageView
                                 android:layout_width="80dp"

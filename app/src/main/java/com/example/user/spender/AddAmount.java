@@ -27,7 +27,6 @@ public class AddAmount extends Activity {
     String detail;
     int year,month,day;
 
-
     int date ;
 
     DBHandler db = new DBHandler(this);
@@ -72,6 +71,7 @@ public class AddAmount extends Activity {
             }
         });
         mEdit=(EditText) findViewById(R.id.amount);
+        mEdit.setTransformationMethod(null);
         submit=(Button) findViewById(R.id.submit);
         try{
             db.addAmount(new Amount(date,breakfast,lunch,dinner,others));

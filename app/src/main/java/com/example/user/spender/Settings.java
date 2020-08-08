@@ -6,6 +6,7 @@ import android.content.Intent;
 import java.util.Calendar;
 import java.util.logging.Logger;
 
+import android.database.CursorIndexOutOfBoundsException;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NavUtils;
@@ -21,6 +22,7 @@ import android.widget.Toast;
  */
 public class Settings extends AppCompatActivity {
     LinearLayout root;
+    SettingsDBHandler setting_db = new SettingsDBHandler(this);
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         Calendar calendar = Calendar.getInstance();
@@ -29,6 +31,30 @@ public class Settings extends AppCompatActivity {
         calendar.set(Calendar.SECOND,20);
         Switch sw1;
         root=(LinearLayout)findViewById(R.id.MainBgImage);
+
+//        final SettingsDBHandler setting_db = new SettingsDBHandler(this);
+//        SettingClass theme;
+//        int theme_value;
+//
+//        try{
+//            theme = setting_db.getSettingDet("Theme");
+//            theme_value=theme.getSettingValue();
+//            Toast.makeText(this,String.valueOf(theme_value)+ " got from db", Toast.LENGTH_LONG).show();
+//        }
+//        catch (CursorIndexOutOfBoundsException s){
+//            setting_db.addSettingDet(new SettingClass("Theme",0));
+//            theme_value = 0;
+//            Toast.makeText(this, "Setting first time value to 0", Toast.LENGTH_LONG).show();
+//        }
+//
+//        if (theme_value==0){
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//        }
+//        else {
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//        }
+        Util u = new Util();
+        u.set_theme(this);
 
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.DarkTheme);
@@ -53,11 +79,13 @@ public class Settings extends AppCompatActivity {
                 try {
                     if (sw1.isChecked()) {
                         str1 = sw1.getTextOn().toString();
+                        setting_db.updateSettingDet(new SettingClass("Theme",1));
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                         Toast.makeText(getApplicationContext(), str1 + " Mode Enabled", Toast.LENGTH_SHORT).show();
                         root.setBackgroundResource(R.drawable.bag_cal_dark);
                     } else {
                         str1 = sw1.getTextOff().toString();
+                        setting_db.updateSettingDet(new SettingClass("Theme",0));
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                         Toast.makeText(getApplicationContext(), str1 + " Mode Enabled", Toast.LENGTH_SHORT).show();
                         root.setBackgroundResource(R.drawable.bag_cal);

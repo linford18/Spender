@@ -174,29 +174,53 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageButton
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="New Button"-->
+            <!--android:id="@+id/button2"-->
+            <!--android:layout_weight="1"-->
+            <!--android:drawableLeft="@mipmap/ic_arrrow_left"-->
+            <!--android:background="#00ffffff"-->
+            <!--android:textColor="#4DB6AC"/>-->
+
+        <Button
             android:layout_width="24dp"
             android:layout_height="52dp"
             android:layout_weight="1"
             android:id="@+id/previousButton"
-            android:src="@drawable/arrowleft"
-            android:background="#2b56cdf9"
-            android:alpha="0.4"
+            android:drawableLeft="@mipmap/ic_arrow_left"
+            android:background="#00ffffff"
             android:layout_gravity="bottom"
-            android:clickable="true" />
+            android:clickable="true"
+            android:text="Previous Month"
+            android:textAlignment="center"
+            android:textColor="#c0ffffff" />
 
-        <ImageButton
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="New Button"-->
+            <!--android:id="@+id/button3"-->
+            <!--android:layout_weight="1"-->
+            <!--android:drawableRight="@mipmap/ic_arrow_right"-->
+            <!--android:background="#00ffffff"-->
+            <!--android:textColor="#4DB6AC" />-->
+
+        <Button
             android:layout_width="24dp"
             android:layout_height="52dp"
             android:id="@+id/nextButton"
             android:layout_gravity="bottom"
-            android:background="#2b56cdf9"
+            android:background="#00ffffff"
             android:src="@drawable/arrowright"
             android:layout_weight="1"
-
-
+            android:drawableRight="@mipmap/ic_arrow_righ"
             android:clickable="true"
-            android:alpha="0.4" />
+            android:text="Next Month"
+            android:textAlignment="center"
+
+            android:textColor="#c0ffffff" />
     </LinearLayout>
 
 

@@ -5,12 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bag_cal"
+    android:scrollbars="none"
     android:id="@+id/stats">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_settings_white_24dp"
+            android:background="#00ffffff"
+            android:layout_marginRight="10dp"
+            android:onClick="settings"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -19,28 +32,27 @@
             android:layout_marginTop="32dp"
             android:layout_marginRight="20dp">
 
-            <ImageView
-                android:layout_width="62dp"
-                android:layout_height="62dp"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/financegraph" />
 
-            <TextView
-                android:id="@+id/testdashboard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="My DashBoard"
-                android:textColor="#FFFFFF"
-                android:textSize="22dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/testdashboard"
-                android:layout_marginTop="6dp"
-                android:text="20 Items"
-                android:textColor="#FFF"
-                android:textSize="14dp" />
+
+            <!--<RelativeLayout-->
+                <!--android:layout_weight="2"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:layout_marginTop="32dp"-->
+                <!--android:layout_marginRight="20dp">-->
+
+                <TextView
+                    android:id="@+id/textGrid"
+                    android:text="SPENDER"
+                    android:textSize="34sp"
+                    android:textColor="#ffffff"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            <!--</RelativeLayout>-->
 
 
         </RelativeLayout>
@@ -53,12 +65,13 @@
             android:columnOrderPreserved="false"
             android:rowCount="3"
             android:id="@+id/statsGrid"
+            android:layout_marginTop="30dp"
             >
 
 
             <android.support.v7.widget.CardView
                 android:id="@+id/card1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
@@ -66,6 +79,7 @@
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp"
                 app:cardBackgroundColor="?attr/cardColor">
+
                 <!--android:onClick="stats1"-->
 
 
@@ -77,17 +91,20 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:src="@drawable/add_amt_icon"
+                        android:layout_gravity="center_horizontal"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/todays" />
+                        android:id="@+id/adddets_img"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Bar Chart"
-                        android:textColor="?attr/textColorMain"
-                        android:textSize="18dp" />
+                        android:layout_marginTop="5dp"
+                        android:text="ADD AMOUNT"
+                        android:textColor="#4DB6AC"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
 
                 </LinearLayout>
 
@@ -95,7 +112,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
@@ -112,25 +129,26 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:src="@drawable/calender_icon"
+                        android:layout_gravity="center_horizontal"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/todays" />
+                        android:layout_height="80dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Pie chart"
-                        android:textColor="?attr/textColorMain"
-                        android:textSize="18dp" />
+                        android:layout_marginTop="5dp"
+                        android:text="VIEW CALANDER"
+                        android:textColor="#4DB6AC"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
 
                 </LinearLayout>
-
             </android.support.v7.widget.CardView>
 
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
@@ -147,17 +165,19 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:src="@drawable/today_icon"
+                        android:layout_gravity="center_horizontal"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/todays" />
+                        android:layout_height="80dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Radar Chart"
-                        android:textColor="?attr/textColorMain"
-                        android:textSize="18dp" />
+                        android:layout_marginTop="5dp"
+                        android:text="TODAYS DETAILS"
+                        android:textColor="#4DB6AC"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
 
                 </LinearLayout>
 
@@ -165,7 +185,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
@@ -182,17 +202,18 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:src="@drawable/total_amt_icon"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/todays" />
+                        android:layout_height="80dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Combined Chart"
-                        android:textColor="?attr/textColorMain"
-                        android:textSize="18dp" />
+                        android:layout_marginTop="5dp"
+                        android:text="MONTHLY DETAILS"
+                        android:textColor="#4DB6AC"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
 
                 </LinearLayout>
 
@@ -200,7 +221,44 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="?attr/cardColor">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:src="@drawable/statistics_icon"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="STATISTICS"
+                    android:textColor="#4DB6AC"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
@@ -217,26 +275,26 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:src="@drawable/sync_icon"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/todays" />
+                        android:layout_height="80dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Stacked Chart"
-                        android:textColor="?attr/textColorMain"
-                        android:textSize="18dp" />
+                        android:layout_marginTop="5dp"
+                        android:text="SYNC UP"
+                        android:textColor="#4DB6AC"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
 
                 </LinearLayout>
 
 
             </android.support.v7.widget.CardView>
 
-
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
@@ -253,17 +311,18 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:src="@drawable/statistics_icon"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/todays" />
+                        android:layout_height="80dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Preview Chart"
-                        android:textColor="?attr/textColorMain"
-                        android:textSize="18dp" />
+                        android:layout_marginTop="5dp"
+                        android:text="STATISTICS"
+                        android:textColor="#4DB6AC"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
 
                 </LinearLayout>
 
@@ -272,13 +331,14 @@
 
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="?attr/cardColor">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -288,17 +348,18 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:src="@drawable/sync_icon"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/todays" />
+                        android:layout_height="80dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Line Column"
-                        android:textColor="?attr/textColorMain"
-                        android:textSize="18dp" />
+                        android:layout_marginTop="5dp"
+                        android:text="SYNC UP"
+                        android:textColor="#4DB6AC"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
 
                 </LinearLayout>
 
@@ -306,249 +367,7 @@
             </android.support.v7.widget.CardView>
 
 
-            <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/todays" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="todays"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18dp" />
-
-                </LinearLayout>
-
-
-            </android.support.v7.widget.CardView>
-
-
-            <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/todays" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="todays"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18dp" />
-
-                </LinearLayout>
-
-
-            </android.support.v7.widget.CardView>
-
-
-            <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/todays" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="todays"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18dp" />
-
-                </LinearLayout>
-
-
-            </android.support.v7.widget.CardView>
-
-
-            <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/todays" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="todays"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18dp" />
-
-                </LinearLayout>
-
-
-            </android.support.v7.widget.CardView>
-
-
-            <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/todays" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="todays"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18dp" />
-
-                </LinearLayout>
-
-
-            </android.support.v7.widget.CardView>
-
-
-            <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/todays" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="todays"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18dp" />
-
-                </LinearLayout>
-
-
-            </android.support.v7.widget.CardView>
-
-
-            <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/todays" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="todays"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18dp" />
-
-                </LinearLayout>
-
-
-            </android.support.v7.widget.CardView>
 
 
         </GridLayout>
